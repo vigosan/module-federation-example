@@ -1,6 +1,6 @@
 FROM node:alpine
 
-ENV APP /usr/src/cms
+ENV APP /cms
 WORKDIR $APP
 
 COPY package.json package-lock.json ./

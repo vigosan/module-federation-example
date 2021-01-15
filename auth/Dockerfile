@@ -1,6 +1,6 @@
 FROM node:alpine
 
-ENV APP /usr/src/auth
+ENV APP /auth
 WORKDIR $APP
 
 COPY package.json package-lock.json ./

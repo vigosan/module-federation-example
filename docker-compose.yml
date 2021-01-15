@@ -8,19 +8,31 @@ services:
       - payments
       - auth
       - cms
+    volumes:
+      - ./container:/container
+      - /container/node_modules
     command: ["npm", "run", "start"]
   payments:
     build: ./payments
     ports:
       - "8081:8081"
+    volumes:
+      - ./payments:/payments
+      - /payments/node_modules
     command: ["npm", "run", "start"]
   auth:
     build: ./auth
     ports:
       - "8082:8082"
+    volumes:
+      - ./auth:/auth
+      - /auth/node_modules
     command: ["npm", "run", "start"]
   cms:
     build: ./cms
     ports:
       - "8083:8083"
+    volumes:
+      - ./cms:/cms
+      - /cms/node_modules
     command: ["npm", "run", "start"]
