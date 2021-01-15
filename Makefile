@@ -13,7 +13,7 @@ reload:
 	make logs
 
 console:
-	docker-compose run --rm $(filter-out $@, $(MAKECMDGOALS)) /bin/bash
+	docker-compose run --rm $(filter-out $@, $(MAKECMDGOALS)) /bin/sh
 
 logs:
 	docker-compose logs -f $(filter-out $@, $(MAKECMDGOALS))
