@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  container:
+    build: ./container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - payments
+      - auth
+      - cms
+    command: ["npm", "run", "start"]
+  payments:
+    build: ./payments
+    ports:
+      - "8081:8081"
+    command: ["npm", "run", "start"]
+  auth:
+    build: ./auth
+    ports:
+      - "8082:8082"
+    command: ["npm", "run", "start"]
+  cms:
+    build: ./cms
+    ports:
+      - "8083:8083"
+    command: ["npm", "run", "start"]
