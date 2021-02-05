@@ -6,20 +6,27 @@ const packageJson = require("../package.json");
 const devConfig = {
   mode: "development",
   devServer: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 8081,
-    historyApiFallback: {
-      index: "index.html",
-    },
+    historyApiFallback: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+    ],
   },
   plugins: [
     new ModuleFederationPlugin({
       name: "payments",
-      filename: 'remoteEntry.js',
+      filename: "remoteEntry.js",
       exposes: {
-        './PaymentList': "./src/bootstrap",
+        "./App": "./src/bootstrap",
       },
-      shared: packageJson.dependencies,
+      // TODO
+      // shared: packageJson.dependencies,
     }),
   ],
 };

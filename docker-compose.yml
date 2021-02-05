@@ -7,7 +7,7 @@ services:
     depends_on:
       - payments
       - auth
-      - cms
+      - dashboard
     volumes:
       - ./container:/container
       - /container/node_modules
@@ -28,11 +28,11 @@ services:
       - ./auth:/auth
       - /auth/node_modules
     command: ["npm", "run", "start"]
-  cms:
-    build: ./cms
+  dashboard:
+    build: ./dashboard
     ports:
       - "8083:8083"
     volumes:
-      - ./cms:/cms
-      - /cms/node_modules
+      - ./dashboard:/dashboard
+      - /dashboard/node_modules
     command: ["npm", "run", "start"]

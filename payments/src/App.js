@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import { PaymentList } from "./components/payments";
+
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <p>Payments</p>
-    </div>
+    <PaymentList />
   );
 }
 

@@ -6,20 +6,27 @@ const packageJson = require("../package.json");
 const devConfig = {
   mode: "development",
   devServer: {
-    host: '0.0.0.0',
-    port: 8083,
-    historyApiFallback: {
-      index: "index.html",
-    },
+    host: "0.0.0.0",
+    port: 8082,
+    historyApiFallback: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+    ],
   },
   plugins: [
     new ModuleFederationPlugin({
       name: "auth",
-      filename: 'remoteEntry.js',
+      filename: "remoteEntry.js",
       exposes: {
-        './Auth': "./src/bootstrap",
+        "./App": "./src/bootstrap",
       },
-      shared: packageJson.dependencies,
+      // TODO
+      // shared: packageJson.dependencies,
     }),
   ],
 };
