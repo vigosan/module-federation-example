@@ -26,7 +26,7 @@ const devConfig = {
         auth: "auth@http://localhost:8082/remoteEntry.js",
         dashboard: "dashboard@http://localhost:8083/remoteEntry.js",
       },
-      // shared: packageJson.dependencies,
+      shared: packageJson.dependencies,
     }),
   ],
 };

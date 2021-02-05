@@ -28,8 +28,7 @@ const devConfig = {
       exposes: {
         "./App": "./src/bootstrap",
       },
-      // TODO
-      // shared: packageJson.dependencies,
+      shared: packageJson.dependencies,
     }),
   ],
 };
