@@ -4,12 +4,12 @@ import { Layout, Loader } from "./components/ui";
 import { useApp } from "./hooks";
 
 // TODO
-import { Auth, Payments, Dashboard, Welcome } from "./components";
+// import { Auth, Payments, Dashboard, Welcome } from "./components";
 
-// import { Welcome } from "./components/Welcome";
-//const AuthLazy = lazy(() => import("./components/Auth/Auth"));
-//const DashboardLazy = lazy(() => import("./components/Dashboard/Dashboard"));
-//const PaymentsLazy = lazy(() => import("./components/Payments/Payments"));
+import { Welcome } from "./components/Welcome";
+const AuthLazy = lazy(() => import("./components/Auth/Auth"));
+const DashboardLazy = lazy(() => import("./components/Dashboard/Dashboard"));
+const PaymentsLazy = lazy(() => import("./components/Payments/Payments"));
 
 import "./App.css";
 
@@ -22,17 +22,17 @@ function App() {
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route path="/payments">
-              <Payments />
+              <PaymentsLazy />
             </Route>
             <Route path="/dashboard">
               {!isSignedIn && <Redirect to="/" />}
-              <Dashboard />
+              <DashboardLazy />
             </Route>
             <Route path="/auth">
-              <Auth />
+              <AuthLazy />
             </Route>
             <Route path="/">
-              {isSignedIn ? <Dashboard /> : <Welcome />}
+              {isSignedIn ? <DashboardLazy /> : <Welcome />}
             </Route>
           </Switch>
         </Suspense>
