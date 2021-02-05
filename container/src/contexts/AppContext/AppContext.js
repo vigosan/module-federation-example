@@ -1,9 +1,9 @@
-import React, { createContext, useMemo, useReducer } from 'react';
+import React, { createContext, useMemo, useReducer } from "react";
 
 const AppContext = createContext();
 const actionTypes = {
-  SIGN_IN: 'SIGN_IN',
-  SIGN_OUT: 'SIGN_OUT',
+  SIGN_IN: "SIGN_IN",
+  SIGN_OUT: "SIGN_OUT",
 };
 
 const initialState = {
@@ -44,11 +44,10 @@ function AppProvider(props) {
       signIn,
       signOut,
     }),
-    [state],
+    [state]
   );
 
   return <AppContext.Provider value={value} {...props} />;
 }
 
 export { AppContext, AppProvider };
-

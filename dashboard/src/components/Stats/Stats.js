@@ -9,9 +9,7 @@ function Stats() {
       <dl className="mt-5 overflow-hidden bg-white rounded-lg shadow grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x">
         <div>
           <div className="px-4 py-5 sm:p-6">
-            <dt className="text-base font-normal text-gray-900">
-              Total Paid
-            </dt>
+            <dt className="text-base font-normal text-gray-900">Total Paid</dt>
             <dd className="flex items-baseline justify-between mt-1 md:block lg:flex">
               <div className="flex items-baseline text-2xl font-semibold text-indigo-600">
                 71,897

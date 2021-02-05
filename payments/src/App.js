@@ -4,9 +4,7 @@ import { PaymentList } from "./components/payments";
 import "./App.css";
 
 function App() {
-  return (
-    <PaymentList />
-  );
+  return <PaymentList />;
 }
 
 export default App;
