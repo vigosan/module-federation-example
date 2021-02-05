@@ -10,7 +10,7 @@ function Signin({ onSignIn }) {
         </span>
         <span className="text-sm leading-normal text-gray-500">
           Don't have an account?{" "}
-          <Link to="/auth/signup" className="text-gray-900 text-medium">
+          <Link to="/auth/signup" className="text-gray-900 text-medium hover:text-gray-600">
             Sign up
           </Link>
         </span>

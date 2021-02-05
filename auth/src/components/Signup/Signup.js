@@ -27,7 +27,7 @@ function Signup() {
               to="/auth/signin"
               className="font-medium text-green-900 underline hover:text-green-600"
             >
-              Upgrade your account to add more credits.
+              Please sign in.
             </Link>
           </p>
         </div>
