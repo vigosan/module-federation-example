@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:latest
 
 ENV APP /payments
 WORKDIR $APP
